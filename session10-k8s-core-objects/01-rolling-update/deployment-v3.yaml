@@ -18,11 +18,11 @@ spec:
     metadata:
       labels:
         app: app-rolling
-        version: v2
+        version: v4
     spec:
       containers:
         - name: web
-          image: nginx:1.25-alpine
+          image: nginx:1.27-alpine
           ports:
             - containerPort: 80
           lifecycle:
