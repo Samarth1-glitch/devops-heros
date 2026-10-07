@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: {{ include "taskboard.fullname" . }}-backend
 spec:
+  {{ if not .Values.hpa.enabled }}
   replicas: {{ .Values.replicaCount }}
+  {{ end }}
   selector:
     matchLabels: {app: taskboard-backend}
   template:
